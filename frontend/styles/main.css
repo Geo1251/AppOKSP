@@ -1,0 +1,14 @@
+.page {
+  background-color: #0E0E10;
+  color: #009dff
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  background-color: #1e1e22;
+  padding: 20px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
