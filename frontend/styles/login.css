@@ -82,3 +82,8 @@
 .login__form-button:hover {
   background-color: #0076c0;
 }
+
+.form__text a {
+  text-decoration: underline;
+  margin-bottom: 20px;
+}
