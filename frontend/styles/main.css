@@ -1,6 +1,6 @@
 .page {
   background-color: #0E0E10;
-  color: #009dff
+  color: #009dff;
 }
 
 .header {
@@ -11,6 +11,12 @@
   padding: 20px;
   border-radius: 20px;
   margin-top: 20px;
+}
+
+.header__buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
 
 .create_btn {
@@ -28,6 +34,21 @@
   background-color: #0076c0;
 }
 
+.logout_btn {
+  background-color: #b41cba;
+  border: none;
+  padding: 10px;
+  width: 100px;
+  border-radius: 20px;
+  font-size: 16px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.logout_btn:hover {
+  background-color: #8c1790;
+}
+
 .list__section {
   margin: 0 auto;
   margin-top: 50px;
@@ -41,19 +62,42 @@
   grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: max-content;
   gap: 50px;
+  list-style: none;
 }
 
 .autos__list-item {
   display: flex;
   flex-direction: column;
-  max-inline-size: 100%;
+  max-inline-size: 90%;
   min-inline-size: 50%;
-  gap: 10px
+  gap: 10px;
+  padding: 20px;
+  border: 2px solid #009dff;
+  border-radius: 10px;
 }
 
 .image__container {
   width: 300px;
   height: 300px;
+  border: 2px solid #009dff;
+  border-radius: 10px;
+  overflow: hidden; 
+}
+
+.image__container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  object-position: center;
+}
+
+.auto__title {
+  font-style: italic;
+  font-size: 32px;
+}
+
+.autos__list-item p {
+  font-size: 24px;
 }
 
 .buttons__container {
@@ -90,4 +134,74 @@
 
 .delete_btn:hover {
   background-color: #9e4444;
+}
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0, 0, 0, 0.8); 
+}
+
+.modal-content {
+  background-color: #1e1e22;
+  margin: 10% auto; 
+  padding: 20px;
+  border: 2px solid #009dff;
+  border-radius: 20px;
+  width: 50%; 
+  color: #009dff;
+}
+
+.close-btn {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.modal-content label {
+  font-size: 18px;
+}
+
+.modal-content input,
+.modal-content textarea {
+  padding: 10px;
+  border: 2px solid #009dff;
+  border-radius: 10px;
+  background-color: #0E0E10;
+  color: #009dff;
+  font-size: 16px;
+}
+
+.modal-content button {
+  background-color: #009dff;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 16px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background-color: #0076c0;
 }

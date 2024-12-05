@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
+  <title>Вход</title>
   <link rel="stylesheet" href="./styles/global.css">
   <link rel="stylesheet" href="./styles/login.css">
   <script defer src="./scripts/login.js"></script>
 </head>
 <body class="page">
-  <heeader class="header">
+  <header class="header">
     <h1 class="header__title">Georgio's Auto</h1>
-  </heeader>
+  </header>
   <main class="main">
     <form action="" class="login__form">
-      <h2 class="login__form-title">Login Admin</h2>
+      <h2 class="login__form-title">Авторизация</h2>
       <fieldset class="login__form-fieldset">
-        <input class="login__form-input" type="text" name="username" id="username" placeholder="Username">
-        <input class="login__form-input" type="password" name="password" id="password" placeholder="Password">
-        <button type="submit" class="login__form-button">Login</button>
+        <input class="login__form-input" type="text" name="username" id="username" placeholder="Username" required>
+        <input class="login__form-input" type="password" name="password" id="password" placeholder="Password" required>
+        <button type="submit" class="login__form-button">Войти</button>
         <p class="form__text">Нет аккаунта? <a href="register.html">Регистрация</a></p>
       </fieldset>
     </form>

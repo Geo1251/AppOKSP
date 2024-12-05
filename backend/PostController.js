@@ -30,7 +30,7 @@ class PostController {
 
     async update(req, res) {
         try {
-            const updatedPost = await PostService.update(req.body);
+            const updatedPost = await PostService.update(req.params.id, req.body, req.files ? req.files.picture : null);
             return res.json(updatedPost);
         } catch (e) {
             res.status(500).json(e.message);

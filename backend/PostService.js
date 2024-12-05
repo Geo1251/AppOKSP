@@ -24,11 +24,17 @@ class PostService {
         return post;
     }
 
-    async update(post) {
-        if (!post.id) {
+    async update(id, post, picture) {
+        if (!id) {
             throw new Error('Id is not specified');
         }
-        const updatedPost = await Post.update(post, { where: { id: post.id } });
+
+        let fileName = post.picture;
+        if (picture) {
+            fileName = FileService.saveFile(picture);
+        }
+
+        const updatedPost = await Post.update({ ...post, picture: fileName }, { where: { id } });
         return updatedPost;
     }
 
