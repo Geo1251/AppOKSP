@@ -13,6 +13,7 @@ router.delete('/posts/:id', PostController.delete);
 router.post('/register', UserController.register);
 router.post('/login', UserController.login);
 router.post('/logout', UserController.logout);
-router.get('/users', UserController.getAllUsers); 
+router.get('/users', UserController.getAllUsers);
+router.get('/verify-token', UserController.verifyToken); 
 
 export default router;

@@ -26,6 +26,19 @@ class UserService {
         const users = await User.findAll();
         return users;
     }
+
+    async verifyToken(token) {
+        try {
+            const decoded = jwt.verify(token, 'secret');
+            const user = await User.findByPk(decoded.id);
+            if (!user) {
+                throw new Error('User not found');
+            }
+            return user;
+        } catch (e) {
+            throw new Error('Invalid token');
+        }
+    }
 }
 
 export default new UserService();

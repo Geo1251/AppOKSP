@@ -19,6 +19,21 @@ document.addEventListener('DOMContentLoaded', async () => {
     return;
   }
 
+  try {
+    const response = await fetch('http://localhost:5000/api/verify-token', {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    });
+    if (!response.ok) {
+      throw new Error('Token verification failed');
+    }
+  } catch (error) {
+    localStorage.removeItem('token');
+    window.location.href = 'login.html';
+    return;
+  }
+
   createBtn.addEventListener('click', () => {
     openModal();
   });

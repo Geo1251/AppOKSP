@@ -32,6 +32,16 @@ class UserController {
             res.status(500).json(e.message);
         }
     }
+
+    async verifyToken(req, res) {
+        try {
+            const token = req.headers['authorization'].split(' ')[1];
+            const user = await UserService.verifyToken(token);
+            res.status(200).json({ user });
+        } catch (e) {
+            res.status(401).json(e.message);
+        }
+    }
 }
 
 export default new UserController();
